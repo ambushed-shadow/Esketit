@@ -1,0 +1,69 @@
+[null,{"name":"LevelingSystem","temp":"msg","event-type":"0","actions":[{"message":"1","varName":"msg","info":"3","storage":"1","varName2":"member","name":"Store Message Info"},{"member":"2","varName":"member","dataName":"exp","changeType":"1","value":"1","name":"Control Member Data"},{"member":"2","varName":"member","dataName":"level","defaultVal":"1","storage":"1","varName2":"myLevel","name":"Store Member Data"},{"member":"2","varName":"member","dataName":"exp","comparison":"1","value":"${tempVars(\"myLevel\") * 5}","iftrue":"0","iftrueVal":"","iffalse":"1","iffalseVal":"","name":"Check Member Data"},{"member":"2","varName":"member","dataName":"exp","changeType":"0","value":"0","name":"Control Member Data"},{"member":"2","varName":"member","dataName":"level","changeType":"1","value":"1","name":"Control Member Data"},{"message":"1","varName":"msg","info":"4","storage":"1","varName2":"channel","name":"Store Message Info"},{"member":"2","varName":"member","dataName":"level","defaultVal":"1","storage":"1","varName2":"myLevel","name":"Store Member Data"},{"channel":"4","varName":"","message":"${tempVars(\"member\")} reached level ${tempVars(\"myLevel\")}!","storage":"0","varName2":"","name":"Send Message"}],"_id":"VxzwF"},{"name":"GuildCount","temp":"","event-type":"1","_id":"aiynC","actions":[]},{"name":"Watching","temp":"","event-type":"0","_id":"BPvWU","actions":[]},{"name":"Name Changer","temp":"","event-type":"1","_id":"fhiAG","actions":[{"time":"10","measurement":"1","name":"Wait"},{"gameName":"Made by Thiccboiman_404","gameLink":"","name":"Set Bot Game"},{"time":"10","measurement":"1","name":"Wait"},{"server":"0","varName":"","nickname":"ThiccBot","name":"Set Bot Nickname"},{"time":"10","measurement":"1","name":"Wait"},{"behavior":"0","interpretation":"0","code":"${this.getDBM().Bot.bot.guilds.array().length}","storage":"1","varName":"counter","name":"Run Script"},{"gameName":"Watching ${this.getDBM().Bot.bot.guilds.array().length} Servers","gameLink":"","name":"Set Bot Game"},{"time":"5","measurement":"1","name":"Wait"},{"source":"fhiAG","list":"4","varName":"","tempVarName":"","type":"true","name":"Loop Through List"}]},{
+  "name": "WelcomeMessage",
+  "temp": "member",
+  "event-type": "6",
+  "actions": [
+    {
+      "info": "1",
+      "find": "💖welcome",
+      "storage": "1",
+      "varName": "newmember",
+      "name": "Find Channel"
+    },
+    {
+      "storage": "1",
+      "varName": "newmember",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "2",
+      "iftrueVal": "4",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channelName": "💖welcome",
+      "categoryID": "",
+      "topic": "",
+      "position": "",
+      "storage": "1",
+      "varName": "newmember",
+      "name": "Create Text Channel"
+    },
+    {
+      "title": "Welcome to the Dragon Lair!",
+      "author": "",
+      "color": "#5A21B2",
+      "url": "",
+      "authorIcon": "",
+      "authorUrl": "",
+      "imageUrl": "https://media1.giphy.com/media/l4JyOCNEfXvVYEqB2/giphy.gif?cid=790b7611f6d69cf97981f0ccc10ef8b5ffa18b5d88197f6a&rid=giphy.gif",
+      "thumbUrl": "",
+      "timestamp": "false",
+      "debug": "false",
+      "text": "",
+      "year": "",
+      "month": "",
+      "day": "",
+      "hour": "",
+      "minute": "",
+      "second": "",
+      "storage": "1",
+      "varName": "message",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "message",
+      "message": "Hi there, ${tempVars("member")}! Please start by introducing yourself in the 😄introductions channel! If you are here for technical help, please go to either 🤖discord-bot-help, 🐩rpg-maker-help, or 🌀mix-it-up-help! Thanks for joining :heart_eyes: ! ",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "message",
+      "channel": "5",
+      "varName2": "newmember",
+      "name": "Send Embed Message"
+    }
+  ]
+},{"name":"botguildscount","permissions":"ADMINISTRATOR","restriction":"4","_id":"tWyvQ","actions":[{"behavior":"0","interpretation":"0","code":"${this.getDBM().Bot.bot.guilds.array().length}","storage":"1","varName":"count","name":"Run Script"},{"channel":"0","varName":"","message":"${tempVars(\"count\")}","storage":"0","varName2":"","name":"Send Message"}],"event-type":"1"}]
